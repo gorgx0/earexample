@@ -4,6 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+
+    <groupId>com.gorg</groupId>
+    <artifactId>ear</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>ear</packaging>
+
     <parent>
         <groupId>com.gorg</groupId>
         <artifactId>earexample</artifactId>
@@ -31,11 +37,6 @@
         </dependency>
     </dependencies>
 
-    <groupId>com.gorg</groupId>
-    <artifactId>ear</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>ear</packaging>
-
     <build>
         <plugins>
             <plugin>
@@ -48,10 +49,10 @@
                             <!--<artifactId>jar</artifactId>-->
                             <!--<includeInApplicationXml>true</includeInApplicationXml>-->
                         <!--</jarModule>-->
-                        <!--<ejbModule>-->
-                            <!--<groupId>com.gorg</groupId>-->
-                            <!--<artifactId>ejb</artifactId>-->
-                        <!--</ejbModule>-->
+                        <ejbModule>
+                            <groupId>com.gorg</groupId>
+                            <artifactId>ejb</artifactId>
+                        </ejbModule>
                         <webModule>
                             <groupId>com.gorg</groupId>
                             <artifactId>web</artifactId>
@@ -59,6 +60,12 @@
                     </modules>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.wildfly.plugins</groupId>
+                <artifactId>wildfly-maven-plugin</artifactId>
+                <version>1.2.0.Alpha5</version>
+            </plugin>
+
         </plugins>
     </build>
 </project>

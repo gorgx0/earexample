@@ -1,3 +1,6 @@
+<%@ page import="javax.enterprise.inject.spi.CDI" %>
+<%@ page import="com.gorg.model.StatelessEJB" %>
+<%@ page import="javax.enterprise.inject.Instance" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -8,6 +11,12 @@
     <title>Document</title>
 </head>
 <body>
+<%
+    Instance<StatelessEJB> obj = CDI.current().select(StatelessEJB.class);
+    out.print(obj);
+
+%>
+
 ear example
 </body>
 </html>
