@@ -43,15 +43,15 @@
                 <version>2.9.1</version>
                 <configuration>
                     <modules>
-                        <jarModule>
-                            <groupId>com.gorg</groupId>
-                            <artifactId>jar</artifactId>
-                            <includeInApplicationXml>true</includeInApplicationXml>
-                        </jarModule>
-                        <ejbModule>
-                            <groupId>com.gorg</groupId>
-                            <artifactId>ejb</artifactId>
-                        </ejbModule>
+                        <!--<jarModule>-->
+                            <!--<groupId>com.gorg</groupId>-->
+                            <!--<artifactId>jar</artifactId>-->
+                            <!--<includeInApplicationXml>true</includeInApplicationXml>-->
+                        <!--</jarModule>-->
+                        <!--<ejbModule>-->
+                            <!--<groupId>com.gorg</groupId>-->
+                            <!--<artifactId>ejb</artifactId>-->
+                        <!--</ejbModule>-->
                         <webModule>
                             <groupId>com.gorg</groupId>
                             <artifactId>web</artifactId>
