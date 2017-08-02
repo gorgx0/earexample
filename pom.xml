@@ -13,6 +13,16 @@
 
     <dependencies>
 
+
+        <dependency>
+            <groupId>com.gorg</groupId>
+            <artifactId>jar</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.16</version>
+        </dependency>
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
@@ -23,15 +33,19 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.16</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.2.3</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.gorg</groupId>
+            <artifactId>jar</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
+
 
     <modules>
         <module>jar</module>
@@ -40,4 +54,36 @@
         <module>ear</module>
     </modules>
 
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-ear-plugin</artifactId>
+                    <version>2.9.1</version>
+                    <configuration>
+                        <modules>
+                            <jarModule>
+                            <groupId>com.gorg</groupId>
+                            <artifactId>jar</artifactId>
+                            <includeInApplicationXml>true</includeInApplicationXml>
+                            </jarModule>
+                            <ejbModule>
+                                <groupId>com.gorg</groupId>
+                                <artifactId>ejb</artifactId>
+                            </ejbModule>
+                            <webModule>
+                                <groupId>com.gorg</groupId>
+                                <artifactId>web</artifactId>
+                            </webModule>
+                        </modules>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.wildfly.plugins</groupId>
+                    <artifactId>wildfly-maven-plugin</artifactId>
+                    <version>1.2.0.Alpha5</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>

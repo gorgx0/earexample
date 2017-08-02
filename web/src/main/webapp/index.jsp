@@ -16,7 +16,7 @@
     out.print(obj);
 
 %>
-
+==================
 ear example
 </body>
 </html>
